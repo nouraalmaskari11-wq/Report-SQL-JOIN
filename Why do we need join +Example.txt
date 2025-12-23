@@ -1,0 +1,93 @@
+Why do we need JOIN 
+
+Databases store data in separate tables to avoid repetition. 
+JOIN connects those tables when you need combined information. 
+
+Example 
+
+Employee table → employee details 
+
+Department table → department details 
+
+JOIN helps you see which employee works in which department. 
+
+ 
+
+Basic JOIN syntax 
+
+SELECT columns 
+FROM table1 
+JOIN table2 
+ON table1.column = table2.column; 
+ 
+
+ 
+
+Common types of JOIN 
+
+1️⃣ INNER JOIN 
+
+Returns only matching rows from both tables. 
+
+SELECT E.FirstName, D.DepName 
+FROM Employee E 
+INNER JOIN Department D 
+ON E.Dnum = D.Dnum; 
+ 
+
+✔ Only employees who belong to a department appear. 
+
+ 
+
+2️⃣ LEFT JOIN (LEFT OUTER JOIN) 
+
+Returns all rows from the left table, even if there is no match. 
+
+SELECT E.FirstName, D.DepName 
+FROM Employee E 
+LEFT JOIN Department D 
+ON E.Dnum = D.Dnum; 
+ 
+
+✔ All employees appear 
+❌ Department data is NULL if no match 
+
+ 
+
+3️⃣ RIGHT JOIN (RIGHT OUTER JOIN) 
+
+Returns all rows from the right table. 
+
+SELECT E.FirstName, D.DepName 
+FROM Employee E 
+RIGHT JOIN Department D 
+ON E.Dnum = D.Dnum; 
+ 
+
+✔ All departments appear 
+
+ 
+
+4️⃣ FULL JOIN 
+
+Returns all rows from both tables. 
+
+SELECT E.FirstName, D.DepName 
+FROM Employee E 
+FULL JOIN Department D 
+ON E.Dnum = D.Dnum; 
+ 
+
+✔ Matches + non-matches from both sides 
+
+ 
+
+Simple real-life example 🏫 
+
+Students table → StudentID, Name 
+
+Courses table → CourseID, StudentID 
+
+JOIN = Which student is enrolled in which course 
+
+ 
